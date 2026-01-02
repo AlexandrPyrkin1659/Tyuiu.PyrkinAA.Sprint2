@@ -18,7 +18,7 @@ namespace Tyuiu.PyrkinAA.Sprint2.Task3.V14
             Console.WriteLine("* РЕЗУЛЬТАТ :                                                             *");
             Console.WriteLine("***************************************************************************");
 
-            Console.WriteLine("* ЗНАЧЕНИЕ ФУНКЦИИ = *" + res );
+            Console.WriteLine("* ЗНАЧЕНИЕ ФУНКЦИИ = *" + res);
 
             Console.ReadKey();
         }

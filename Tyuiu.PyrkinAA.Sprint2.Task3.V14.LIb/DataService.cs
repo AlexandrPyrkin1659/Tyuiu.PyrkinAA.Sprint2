@@ -1,4 +1,5 @@
 ﻿using tyuiu.cources.programming.interfaces.Sprint2;
+
 namespace Tyuiu.PyrkinAA.Sprint2.Task3.V14.Lib
 {
     public class DataService : ISprint2Task3V14
@@ -13,21 +14,21 @@ namespace Tyuiu.PyrkinAA.Sprint2.Task3.V14.Lib
             }
             else if (x == 0)
             {
-                y = 3 * Math.Pow(x, 2) - Math.Cos(Math.Pow(x, 3)) + 10;
+                double numerator = 3 * Math.Pow(x, 2) - Math.Cos(Math.Pow(x, 3)) + 10;
+                double denominator = 4 * Math.Pow(x, 2) - Math.Sin(Math.Pow(x, 4)) + 12;
+                y = numerator / denominator;
             }
             else if (-18 < x && x < 2)
             {
-                
                 y = Math.Pow(1 + 1 / (x * x), x);
             }
             else if (x < -18)
             {
-                y = 11 * x - 1 / x; 
+                y = 11 * x - 1 / x;
             }
             else
             {
-               
-               y = 0; 
+                y = 0; 
             }
 
             return Math.Round(y, 3);
