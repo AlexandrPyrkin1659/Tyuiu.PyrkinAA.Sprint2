@@ -1,4 +1,9 @@
-﻿using tyuiu.cources.programming.interfaces.Sprint2;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using tyuiu.cources.programming.interfaces.Sprint2;
 
 namespace Tyuiu.PyrkinAA.Sprint2.Task3.V14.Lib
 {
@@ -28,7 +33,7 @@ namespace Tyuiu.PyrkinAA.Sprint2.Task3.V14.Lib
             }
             else
             {
-                y = 0; 
+                y = 0;
             }
 
             return Math.Round(y, 3);
