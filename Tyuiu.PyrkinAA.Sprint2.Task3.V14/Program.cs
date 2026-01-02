@@ -1,4 +1,4 @@
-﻿using Tyuiu.PyrkinAA.Sprint2.Task3.V14.LIb;
+﻿using Tyuiu.PyrkinAA.Sprint2.Task3.V14.Lib;
 namespace Tyuiu.PyrkinAA.Sprint2.Task3.V14
 {
     class Program
