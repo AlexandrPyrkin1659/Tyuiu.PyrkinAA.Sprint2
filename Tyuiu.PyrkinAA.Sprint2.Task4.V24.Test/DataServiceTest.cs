@@ -23,10 +23,6 @@ namespace Tyuiu.PyrkinAA.Sprint2.Task4.V24.Test
             DataService ds = new DataService();
             double x = 5;
             double y = 30;
-
-            // Правильный расчёт:
-            // 5 + 2 = 7, 30 + 24 = 54 → 7 > 54? НЕТ → вторая ветка
-
             double numerator = Math.Pow(y, 2) + Math.Pow(Math.Cos(x), 2) + 9;
             double denominator = Math.Pow(x, 2) - Math.Pow(Math.Sin(y), 2) + 12;
             double wait = Math.Round(numerator / denominator, 3);
