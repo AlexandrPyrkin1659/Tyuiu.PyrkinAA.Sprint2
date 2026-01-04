@@ -53,31 +53,31 @@ namespace Tyuiu.PyrkinAA.Sprint2.Task6.V6
             switch (k)
             {
                 case 6:
-                    rankName = "Шестерка";
+                    rankName = "шестерка";
                     break;
                 case 7:
-                    rankName = "Семерка";
+                    rankName = "семерка";
                     break;
                 case 8:
-                    rankName = "Восьмерка";
+                    rankName = "восьмерка";
                     break;
                 case 9:
-                    rankName = "Девятка";
+                    rankName = "девятка";
                     break;
                 case 10:
-                    rankName = "Десятка";
+                    rankName = "десятка";
                     break;
                 case 11:
-                    rankName = "Валет";
+                    rankName = "валет";
                     break;
                 case 12:
-                    rankName = "Дама";
+                    rankName = "дама";
                     break;
                 case 13:
-                    rankName = "Король";
+                    rankName = "король";
                     break;
                 case 14:
-                    rankName = "Туз";
+                    rankName = "туз";
                     break;
                 default:
                     rankName = "Неизвестное достоинство";
