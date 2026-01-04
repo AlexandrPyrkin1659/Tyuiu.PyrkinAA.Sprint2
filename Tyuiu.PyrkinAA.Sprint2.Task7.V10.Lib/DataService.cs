@@ -5,18 +5,17 @@ namespace Tyuiu.PyrkinAA.Sprint2.Task7.V10.Lib
     {
         public bool CheckDotInShadedArea(double x, double y)
         {
+
             double parabolaY = x * x - 2;
-            double lineY = x;
+            double lineY1 = x;
+            double lineY2 = -x;
 
+            bool aboveParabola = y >= parabolaY;
+            bool belowLine1 = y <= lineY1;
+            bool aboveLine2 = y >= lineY2;
+            bool rightOfYAxis = x >= 0;
 
-
-            bool isUnderParabola = y <= parabolaY;
-            bool isAboveLine = y >= lineY;
-            bool isInXRange = x <= 0;
-
-            return isUnderParabola && isAboveLine && isInXRange;
+            return aboveParabola && belowLine1 && aboveLine2 && rightOfYAxis;
         }
-
     }
- 
 }
