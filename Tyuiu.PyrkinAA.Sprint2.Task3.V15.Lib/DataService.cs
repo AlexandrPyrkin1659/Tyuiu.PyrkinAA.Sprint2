@@ -1,29 +1,29 @@
 ﻿using tyuiu.cources.programming.interfaces.Sprint2;
-namespace Tyuiu.PyrkinAA.Sprint2.Task3.V14.Lib;
+namespace Tyuiu.PyrkinAA.Sprint2.Task3.V15.Lib;
 
-    public class DataService : ISprint2Task3V14
+public class DataService : ISprint2Task3V15
 {
     public double Calculate(double x)
     {
         double result;
 
-      
+
         if (x > 1)
         {
             result = x - Math.Pow((x + 1) / (x - 1), 3);
         }
- 
+
         else if (Math.Abs(x) < 0.00001)
         {
             result = 3 * x * x - Math.Cos(x * x * x) + 10;
         }
-       
+
         else if (x > -18 && x < 2)
         {
-        
+
             if (Math.Abs(x) < 0.00001)
             {
-              
+
                 result = 3 * x * x - Math.Cos(x * x * x) + 10;
             }
             else
@@ -31,12 +31,12 @@ namespace Tyuiu.PyrkinAA.Sprint2.Task3.V14.Lib;
                 result = Math.Pow(1 + 1 / (x * x), x);
             }
         }
-       
+
         else if (x < -18)
         {
             result = 11 * x - (1 / x);
         }
-        
+
         else
         {
             if (Math.Abs(x - 2) < 0.00001)
@@ -57,8 +57,7 @@ namespace Tyuiu.PyrkinAA.Sprint2.Task3.V14.Lib;
             }
         }
 
-      
+
         return Math.Round(result, 3);
     }
 }
-
