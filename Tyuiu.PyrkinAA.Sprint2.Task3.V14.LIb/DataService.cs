@@ -1,42 +1,64 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using tyuiu.cources.programming.interfaces.Sprint2;
+﻿using tyuiu.cources.programming.interfaces.Sprint2;
+namespace Tyuiu.PyrkinAA.Sprint2.Task3.V14.Lib;
 
-namespace Tyuiu.PyrkinAA.Sprint2.Task3.V14.Lib
-{
     public class DataService : ISprint2Task3V14
+{
+    public double Calculate(double x)
     {
-        public double Calculate(double x)
-        {
-            double y;
+        double result;
 
-            if (x > 1)
+      
+        if (x > 1)
+        {
+            result = x - Math.Pow((x + 1) / (x - 1), 3);
+        }
+ 
+        else if (Math.Abs(x) < 0.00001)
+        {
+            result = 3 * x * x - Math.Cos(x * x * x) + 10;
+        }
+       
+        else if (x > -18 && x < 2)
+        {
+        
+            if (Math.Abs(x) < 0.00001)
             {
-                y = x - Math.Pow((x + 1) / (x - 1), 3);
-            }
-            else if (x == 0)
-            {
-                double numerator = 3 * Math.Pow(x, 2) - Math.Cos(Math.Pow(x, 3)) + 10;
-                double denominator = 4 * Math.Pow(x, 2) - Math.Sin(Math.Pow(x, 4)) + 12;
-                y = numerator / denominator;
-            }
-            else if (-18 < x && x < 2)
-            {
-                y = Math.Pow(1 + 1 / (x * x), x);
-            }
-            else if (x < -18)
-            {
-                y = 11 * x - 1 / x;
+              
+                result = 3 * x * x - Math.Cos(x * x * x) + 10;
             }
             else
             {
-                y = 0;
+                result = Math.Pow(1 + 1 / (x * x), x);
             }
-
-            return Math.Round(y, 3);
         }
+       
+        else if (x < -18)
+        {
+            result = 11 * x - (1 / x);
+        }
+        
+        else
+        {
+            if (Math.Abs(x - 2) < 0.00001)
+            {
+                throw new ArgumentException("x = 2 не определено");
+            }
+            else if (Math.Abs(x + 18) < 0.00001)
+            {
+                throw new ArgumentException("x = -18 не определено");
+            }
+            else if (Math.Abs(x - 1) < 0.00001)
+            {
+                throw new DivideByZeroException("x = 1 приводит к делению на ноль");
+            }
+            else
+            {
+                throw new ArgumentException($"Неподдерживаемое значение x = {x}");
+            }
+        }
+
+      
+        return Math.Round(result, 3);
     }
 }
+

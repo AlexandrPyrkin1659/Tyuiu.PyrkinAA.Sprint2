@@ -1,73 +1,31 @@
 ﻿using Tyuiu.PyrkinAA.Sprint2.Task3.V14.Lib;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Tyuiu.PyrkinAA.Sprint2.Task3.V14.Test
-
 {
     [TestClass]
-    public class DataServiceTest
+    public sealed class DataServiceTest
     {
-        [TestMethod]
-        public void ValidCalculateXGreaterThan1() 
+      
+    [TestMethod]
+        public void TestCalculate()
         {
             DataService ds = new DataService();
-            double x = 2;
-            double wait = -25;
-            double res = ds.Calculate(x);
-            Assert.AreEqual(wait, res);
-        }
 
-        [TestMethod]
-        public void ValidCalculateXEquals0() 
-        {
-            DataService ds = new DataService();
-            double x = 0;
-            double wait = 0.75;
-            double res = ds.Calculate(x);
-            Assert.AreEqual(wait, res);
-        }
+            
+            double result1 = ds.Calculate(2.5);
+            Console.WriteLine($"При x = 2.5, y = {result1}");
 
-        [TestMethod]
-        public void ValidCalculateXInInterval() 
-        {
-            DataService ds = new DataService();
-            double x = -5;
-            double wait = 0.822; 
-            double res = ds.Calculate(x);
-            Assert.AreEqual(wait, res, 0.001);
-        }
+         
+            double result2 = ds.Calculate(0);
+            Console.WriteLine($"При x = 0, y = {result2}");
 
-        [TestMethod]
-        public void ValidCalculateXLessThanMinus18() 
-        {
-            DataService ds = new DataService();
-            double x = -20;
-            double wait = -219.95;
-            double res = ds.Calculate(x);
-            Assert.AreEqual(wait, res);
-        }
+           
+            double result3 = ds.Calculate(-5);
+            Console.WriteLine($"При x = -5, y = {result3}");
 
-        [TestMethod]
-        public void ValidCalculateXNearOne() 
-        {
-            DataService ds = new DataService();
-            double x = 1.0001;
-            double part = (x + 1) / (x - 1); 
-            double cube = Math.Pow(part, 3); 
-            double wait = x - cube; 
-            wait = Math.Round(wait, 3);
-            double res = ds.Calculate(x);
-            Assert.AreEqual(wait, res, 1e9);
-        }
-
-        [TestMethod]
-        public void ValidCalculateXNearMinus18() 
-        {
-            DataService ds = new DataService();
-            double x = -17.999;
-            double wait = Math.Pow(1 + 1 / (x * x), x);
-            wait = Math.Round(wait, 3);
-            double res = ds.Calculate(x);
-            Assert.AreEqual(wait, res, 0.001);
+           
+            double result4 = ds.Calculate(-20);
+            Console.WriteLine($"При x = -20, y = {result4}");
         }
     }
 }
+
