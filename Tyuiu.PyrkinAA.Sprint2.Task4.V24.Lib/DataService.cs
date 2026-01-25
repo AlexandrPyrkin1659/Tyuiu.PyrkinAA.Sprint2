@@ -10,8 +10,8 @@ namespace Tyuiu.PyrkinAA.Sprint2.Task4.V24.Lib
                 ? x * Math.Pow((y + 1) / (x + 2), x)
                 : (Math.Pow(y, 2) + Math.Pow(Math.Cos(x), 2) + 9) / (Math.Pow(x, 2) - Math.Pow(Math.Sin(y), 2) + 12);
 
-           
-            return Math.Round(result, 3, MidpointRounding.AwayFromZero);
+            
+            return double.Parse(result.ToString("0.000"));
         }
     }
 }
