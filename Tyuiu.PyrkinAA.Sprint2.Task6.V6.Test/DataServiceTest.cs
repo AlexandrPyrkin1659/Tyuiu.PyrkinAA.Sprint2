@@ -12,19 +12,19 @@ namespace Tyuiu.PyrkinAA.Sprint2.Task6.V6.Test
             DataService ds = new DataService();
 
            
-            Assert.AreEqual("Дама пик", ds.FindCardNameAndValue(1, 12));
+            Assert.AreEqual("дама пик", ds.FindCardNameAndValue(1, 12));
 
             
-            Assert.AreEqual("Шестерка бубен", ds.FindCardNameAndValue(3, 6));
-
-           
-            Assert.AreEqual("Туз черв", ds.FindCardNameAndValue(4, 14));
-
-           
-            Assert.AreEqual("Валет треф", ds.FindCardNameAndValue(2, 11));
+            Assert.AreEqual("шестерка бубен", ds.FindCardNameAndValue(3, 6));
 
             
-            Assert.AreEqual("Десятка пик", ds.FindCardNameAndValue(1, 10));
+            Assert.AreEqual("туз черв", ds.FindCardNameAndValue(4, 14));
+
+            
+            Assert.AreEqual("валет треф", ds.FindCardNameAndValue(2, 11));
+
+            
+            Assert.AreEqual("десятка пик", ds.FindCardNameAndValue(1, 10));
         }
 
         [TestMethod]
@@ -32,10 +32,10 @@ namespace Tyuiu.PyrkinAA.Sprint2.Task6.V6.Test
         {
             DataService ds = new DataService();
 
-            
-            Assert.AreEqual("Неизвестная карта неизвестная масть", ds.FindCardNameAndValue(0, 0));
-            Assert.AreEqual("Неизвестная карта треф", ds.FindCardNameAndValue(2, 0));
-            Assert.AreEqual("Шестерка неизвестная масть", ds.FindCardNameAndValue(0, 6));
+           
+            Assert.AreEqual("неизвестная карта неизвестная масть", ds.FindCardNameAndValue(0, 0));
+            Assert.AreEqual("неизвестная карта треф", ds.FindCardNameAndValue(2, 0));
+            Assert.AreEqual("шестерка неизвестная масть", ds.FindCardNameAndValue(0, 6));
         }
     }
 }
