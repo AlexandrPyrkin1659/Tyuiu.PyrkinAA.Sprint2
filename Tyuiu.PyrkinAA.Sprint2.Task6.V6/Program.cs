@@ -1,129 +1,42 @@
 ﻿using Tyuiu.PyrkinAA.Sprint2.Task6.V6.Lib;
-namespace Tyuiu.PyrkinAA.Sprint2.Task6.V6
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("***********************************************************");
-            Console.WriteLine("* Программа определения названия карты                    *");
-            Console.WriteLine("***********************************************************");
-            Console.WriteLine("\nВведите номер масти (1-4):");
-            Console.WriteLine("1 - пики");
-            Console.WriteLine("2 - трефы");
-            Console.WriteLine("3 - бубны");
-            Console.WriteLine("4 - червы");
 
-            int m = Convert.ToInt32(Console.ReadLine());
-            string suitName;
+DataService ds = new DataService();
+Console.Title = "Спринт 2 | Выполнил: Пыркин А. А. | АСОиУб-25-1";
+Console.WriteLine("***************************************************************************");
+Console.WriteLine("* Спринт #2                                                               *");
+Console.WriteLine("* Тема: Сокращенная форма записи оператора switch                         *");
+Console.WriteLine("* Задание #6                                                              *");
+Console.WriteLine("* Вариант #6                                                              *");
+Console.WriteLine("* Выполнил: Пыркин Александр Артемьевич | АСОиУб-25-1                     *");
+Console.WriteLine("***************************************************************************");
+Console.WriteLine("* УСЛОВИЕ:                                                                *");
+Console.WriteLine("* Написать программу, которая использует сокращенную форму записи         *");
+Console.WriteLine("* оператора switch вычисляет требуемое значение и возвращает результат.   *");
+Console.WriteLine("*                                                                         *");
+Console.WriteLine("* Мастям игральных карт условно присвоены следующие порядковые номера:    *");
+Console.WriteLine("* масти «пики» — 1, масти «трефы» — 2, масти «бубны» — 3,                 *");
+Console.WriteLine("* масти «червы» — 4, а достоинству карт: «валету» — 11, «даме» — 12,      *");
+Console.WriteLine("* «королю» — 13, «тузу» — 14 (порядковые номера карт остальных достоинств *");
+Console.WriteLine("* соответствуют их названиям: «шестерка», «девятка» и т. п.).             *");
+Console.WriteLine("*                                                                         *");
+Console.WriteLine("* По заданным номеру масти m (1 <= m <= 4) и номеру достоинства карты k   *");
+Console.WriteLine("* (6 <= k <= 14) определить полное название (масть и достоинство)        *");
+Console.WriteLine("* соответствующей карты в виде «Дама пик», «Шестерка бубен» и т. п.       *");
+Console.WriteLine("***************************************************************************");
+Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                        *");
+Console.WriteLine("***************************************************************************");
 
-            switch (m)
-            {
-                case 1:
-                    suitName = "пики";
-                    break;
-                case 2:
-                    suitName = "трефы";
-                    break;
-                case 3:
-                    suitName = "бубны";
-                    break;
-                case 4:
-                    suitName = "червы";
-                    break;
-                default:
-                    suitName = "неизвестная масть";
-                    break;
-            }
+Console.WriteLine("Введите номер масти (1-4):");
+int m = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("\nВведите номер достоинства карты (6-14):");
-            Console.WriteLine("6 - шестерка");
-            Console.WriteLine("7 - семерка");
-            Console.WriteLine("8 - восьмерка");
-            Console.WriteLine("9 - девятка");
-            Console.WriteLine("10 - десятка");
-            Console.WriteLine("11 - валет");
-            Console.WriteLine("12 - дама");
-            Console.WriteLine("13 - король");
-            Console.WriteLine("14 - туз");
+Console.WriteLine("Введите номер достоинства карты (6-14):");
+int k = Convert.ToInt32(Console.ReadLine());
 
-            int k = Convert.ToInt32(Console.ReadLine());
-            string rankName;
+Console.WriteLine("***************************************************************************");
+Console.WriteLine("* РЕЗУЛЬТАТ:                                                              *");
+Console.WriteLine("***************************************************************************");
 
-            switch (k)
-            {
-                case 6:
-                    rankName = "шестерка";
-                    break;
-                case 7:
-                    rankName = "семерка";
-                    break;
-                case 8:
-                    rankName = "восьмерка";
-                    break;
-                case 9:
-                    rankName = "девятка";
-                    break;
-                case 10:
-                    rankName = "десятка";
-                    break;
-                case 11:
-                    rankName = "валет";
-                    break;
-                case 12:
-                    rankName = "дама";
-                    break;
-                case 13:
-                    rankName = "король";
-                    break;
-                case 14:
-                    rankName = "туз";
-                    break;
-                default:
-                    rankName = "Неизвестное достоинство";
-                    break;
-            }
+var result = ds.FindCardNameAndValue(m, k);
+Console.WriteLine(result);
 
-            Console.WriteLine("\n***********************************************************");
-            Console.WriteLine("* РЕЗУЛЬТАТ:                                              *");
-            Console.WriteLine("***********************************************************");
-
-            if (m >= 1 && m <= 4 && k >= 6 && k <= 14)
-            {
-                string suitForResult = "";
-                switch (m)
-                {
-                    case 1:
-                        suitForResult = "пик";
-                        break;
-                    case 2:
-                        suitForResult = "треф";
-                        break;
-                    case 3:
-                        suitForResult = "бубен";
-                        break;
-                    case 4:
-                        suitForResult = "червей";
-                        break;
-                }
-                if (k >= 6 && k <= 10)
-                {
-                    Console.WriteLine($"{rankName.ToLower()} {suitForResult}");
-                }
-                else
-                {
-                    Console.WriteLine($"{rankName} {suitForResult}");
-                }
-            }
-            else
-            {
-                Console.WriteLine("Ошибка ввода! Проверьте введенные данные.");
-                Console.WriteLine($"Масть: {suitName}");
-                Console.WriteLine($"Достоинство: {rankName}");
-            }
-
-            Console.WriteLine("\nДля завершения нажмите любую клавишу...");
-            Console.ReadKey();
-        }
-    }
-}
+Console.ReadKey();
